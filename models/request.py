@@ -13,6 +13,7 @@ class Request(db.Model, Serializer):
                       nullable=False, index=True)
     mode = db.Column(db.String(32))
     subject_id = db.Column(db.String(32))
+    accepted = db.Column(db.Boolean) 
     __table_args__ = ( # ensure that every pair is unique 
     db.UniqueConstraint('sender_id', 'receiver_id'),
     )

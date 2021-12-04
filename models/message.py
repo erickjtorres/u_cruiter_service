@@ -9,6 +9,8 @@ class Message(db.Model, Serializer):
     id = db.Column(db.Integer, primary_key=True)
     sender_id = db.Column(db.Integer, db.ForeignKey("users.id"), 
                       nullable=False, index=True)
+    chat_id = db.Column(db.Integer, db.ForeignKey("chats.id"), 
+                      nullable=False, index=True)
     receiver_id = db.Column(db.Integer, db.ForeignKey("users.id"), 
                       nullable=False, index=True)
     mode = db.Column(db.String(32))

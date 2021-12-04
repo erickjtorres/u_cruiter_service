@@ -24,6 +24,7 @@ class User(db.Model):
     bio = db.Column(db.Text())
     degrees = db.Column(db.String(100))
     organization = db.Column(db.String(100))
+    date = db.Column(db.DateTime)
 
     def hash_password(self, password):
         self.password_hash = pwd_context.encrypt(password)
